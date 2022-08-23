@@ -1,0 +1,261 @@
+---
+title: "Lab 1 Introduction to R Markdown"
+author: "B. Sosnovski"
+date: "09/25/2021"
+output: 
+  html_document: 
+    theme: cerulean
+---
+```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to R Markdown
+
+This lab will show you how to write an R Markdown document.
+
+## General Goals
+
+In this lab you will learn:
+
+1. What R Markdown is
+2. How to use of most commonly R Markdown syntax
+3. How to create an R Markdown file
+4. How to add code in your R Markdown file
+5. How to format your text and equations in R Markdown
+
+## Markdown
+
+Markdown is a way of adding to a plain text document formatting such as headers, lists, emphasis, quotes, links to URLs and images, and more.
+
+Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to HTML.
+
+## R Markdown
+
+R Markdown allows you to write a  HTML, PDF, and/or MS Word documents, a presentation or even a book by just using Markdown syntax and embedded programming code.
+
+R Markdown files have extension **.Rmd**
+
+The "**R**" in R Markdown stands for the [R statistical computing](https://www.R-project.org/) language.
+
+R Markdown files contain three important types of content:
+
+1. An (optional) YAML header surrounded by ---s.
+2. Chunks of R code surrounded by ```.
+3. Text mixed with simple text formatting like # heading and _italics_.
+
+We will cover these contents in this lab.
+
+
+## Load Packages
+
+Packages are collections of R functions, data, and some compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages.  Others packages are available for download and  must be installed. 
+
+In Cocalc, a large number of packages are already installed, so there is no need to install them.
+
+Once a package is installed, they have to be loaded into the session to be used.
+
+To load a package in R, we invoke the command ``library(package)`` where in ''package'' will be replaced with the name of the package you want to load.
+
+Here is an example on how to invoke a package in R Markdown.
+
+```{r}
+library("knitr")
+```
+
+The ``knitr`` package extends the basic markdown syntax to include chunks of executable R code.
+
+Cocalc already have this package loaded for you. But if you are running your code, say in R Studio, you would need to install and include the ``knitr`` in the library of your document or script.
+
+
+### Example
+
+Now load the package called ``dplyr``.
+
+`Enter your code below:`
+
+
+You will learn how to install packages for R in Cocalc in lab 2 (Stay tuned!!!).
+
+
+## Formatting text
+
+I hope you already noticed some of the formatted text above in this rmd file.
+
+Here some basics formatting of text in Markdown.
+
+### Comments
+
+Note that you can add comments in Markdown documents as follows: ``<!-- your comment -->``. The comments will not be displayed in any output format.
+
+<span style='color:#d2691e'>Compare this line here in the rmd file on the left and the output format in HTML on the right (Note that the comment below is missing!!.</span>
+
+<!--  This will not be displayed in the output format -->
+
+### Plain Code Blocks
+
+Plain code blocks are displayed in a fixed-width font but not evaluated by R.
+
+```
+2*3
+This text is displayed verbatim
+```
+You will see this throughout this rmd file to display examples of codes that are not evaluated.
+
+
+### Headers
+   
+   You can include section headers by using pound signs.
+   
+
+```
+# First-level header
+
+## Second-level header
+
+### Third-level header
+```
+
+### Emphasis
+
+
+```
+*italic*   **bold**
+
+_italic_   __bold__
+
+```
+Note that the word *Statistics* is in italic here and the work **markdown** is in bold.
+
+*Bianca*
+**Sosnovski**
+  
+### Lists
+
+##### Unordered list
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+
+The code for the list above is:
+
+```
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+```
+* Grade test 1
+* Grade HW
+    + HW 1
+    + HW 2
+
+
+##### Ordered list
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+
+
+The code for the list above is:
+
+```
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+### Hyperlinks
+
+To add hyperlinks we surround the links with brackets, and then provide the link address in parentheses, like this [QCC](https://www.qcc.cuny.edu).
+
+```
+[QCC](https://www.qcc.cuny.edu)
+```
+
+## Embedding R code
+
+
+You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+#cars is a built-in data set in R
+```
+
+Note that the line above is a comment in the R code, and that you can add comments in the R code chunk with a pound sign. Another example:
+
+```{r}
+2*3
+# This is purely a comment that will be ignored by the R evaluator.
+```
+
+To add an inline code use a pair of backticks and the letter r. For example, `r 2*3`. We can also mark text as inline code by using just the pair of backticks. For example, `code`.
+
+You can also embed plots in your rmd files. For example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+You can do a lot of things in a code chunk: produce text output, tables, or graphics. You have fine control over all these output via chunk options, which can be provided inside the curly braces (between `{r and }`).
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Example
+Create a code chunk that will produce the summary of the dataset `Seatbelts`.
+
+`Enter your code below:`
+
+
+### Example
+Create a code chunk that will produce a plot of the dataset `Seatbelts`.
+
+`Enter your code below:`
+
+
+
+## Writing mathematical equations and formulas
+
+Of course, you can include math formulas by using dollar signs around the equation in Latex syntax (Using $ symbols around the equation).
+
+The following is the code for writing the equation of the area of a circle in two formats.
+
+### In line
+
+```
+$ A= \pi r^2 $
+``` 
+
+### In equation display
+
+```
+$$ A= \pi r^2 $$ 
+```
+
+### Example
+
+Write the equation of the circumference of a circle. 
+
+`Enter your code below:`
+
+
+## Lab Exercises and Writing Assignment
+
+The instructions for the lab and WA are in the Lab_1.rmd and WA_1.rmd files, which will be used to submit your work and answers.
+
+## References
+
+Parts of the material used in this document are adaptations or excerpt from the following:
+
+* Grolemund, Garrett. "Introduction to R Markdown."  July 16, 2014. https://rmarkdown.rstudio.com/articles_intro.html
+
+* "Markdown Basics." https://rmarkdown.rstudio.com/authoring_basics.html
+
