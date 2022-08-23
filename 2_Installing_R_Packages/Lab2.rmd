@@ -1,0 +1,38 @@
+---
+title: "Lab 2"
+author: "Student"
+date: "01/01/2001"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+
+```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+Use this template rmd file to submit your answers for the Lab assigment. Don't forget to update the YAML above to have your name and current date.
+
+
+# Lab exercise (50 points) 
+
+
+1. Install the R package ``abbreviate``  in the Home directory in your project.
+
+
+2. Run the chunk of code below:
+
+```
+txt <- c("statistics", "mathematics", "programming", "maximum", "average")
+abbreviate_text(txt,3)
+```
+
+**Note:** If you install the package successfully the code above will run without issues.
+
+
+
+
+
+
