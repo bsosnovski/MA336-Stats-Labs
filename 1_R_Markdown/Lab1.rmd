@@ -8,7 +8,7 @@ output:
 ---
 
 
-```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
@@ -18,11 +18,11 @@ Use this template rmd file to submit your answers for the Lab assigment. Update 
 
 # Lab exercise (50 points) 
 
-In general, the lab component of the assignments will be some coding task(s) using R. Most of the time, the expectation is that students `copy` and `paste` R chunks of code from the lab instructions, then make some adjustment to that code to achieve the result required for the exercises.
+In general, the lab component of the assignments will be some coding task(s) using R. Most of the time, the expectation is that students `copy` and `paste` R chunks of code from the lab instructions, then make some adjustments to that code to achieve the result required for the exercises.
 
 Peform the following taks.
 
-1. Write an R code that will compute 10 times (10 pts)
+1. Write an R code that will compute the number 10. (10 pts)
 
 `Enter your code below:`
 
