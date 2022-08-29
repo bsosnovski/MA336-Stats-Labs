@@ -6,7 +6,7 @@ output:
   html_document: 
     theme: cerulean
 ---
-```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -19,8 +19,8 @@ This lab will show you how to write an R Markdown document.
 In this lab you will learn:
 
 1. What R Markdown is
-2. How to use of most commonly R Markdown syntax
-3. How to create an R Markdown file
+2. How to create an R Markdown file
+2. How to use most commonly R Markdown syntax
 4. How to add code in your R Markdown file
 5. How to format your text and equations in R Markdown
 
@@ -47,6 +47,26 @@ R Markdown files contain three important types of content:
 We will cover these contents in this lab.
 
 
+
+
+## Creating Rmd Files (Cocalc.com)
+
+To create an Rmd file in Cocalc. com, go to the directory (location) in your project where you want the file to be. Then:
+
+1. Click on "New"
+2. Choose the option "RMarkdown (.rmd)" 
+3. The system will prompt you to enter a name for the file (optional)
+4. Click "Create"
+
+![Figure: _Creating Rmd files_](create_rmd_files.png) 
+
+### Example
+
+Create an Rmd file named "My_File" in the same directory where this lab is located.
+
+
+
+
 ## Load Packages
 
 Packages are collections of R functions, data, and some compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages.  Others packages are available for download and  must be installed. 
@@ -63,9 +83,11 @@ Here is an example on how to invoke a package in R Markdown.
 library("knitr")
 ```
 
+**Note:** To run any R chunk of code, you must use the 3 backticks followed by R in curly braces and after the code you want to run, close the chunk with another set of 3 backticks. More on this later in this lab.
+
 The ``knitr`` package extends the basic markdown syntax to include chunks of executable R code.
 
-Cocalc already have this package loaded for you. But if you are running your code, say in R Studio, you would need to install and include the ``knitr`` in the library of your document or script.
+Cocalc already have this package loaded for you. But if you are running your code, say in R Studio on your own computer, you would need to install and include the ``knitr`` in the library of your document or script.
 
 
 ### Example
@@ -75,7 +97,10 @@ Now load the package called ``dplyr``.
 `Enter your code below:`
 
 
-You will learn how to install packages for R in Cocalc in lab 2 (Stay tuned!!!).
+
+**Note:** You will learn how to install packages for R in Cocalc in lab 2 (Stay tuned!!!).
+
+
 
 
 ## Formatting text
@@ -88,7 +113,7 @@ Here some basics formatting of text in Markdown.
 
 Note that you can add comments in Markdown documents as follows: ``<!-- your comment -->``. The comments will not be displayed in any output format.
 
-<span style='color:#d2691e'>Compare this line here in the rmd file on the left and the output format in HTML on the right (Note that the comment below is missing!!.</span>
+<span style='color:#d2691e'>Compare this line here in the rmd file (on the left in Cocalc.com) and the output format in HTML on the right (Note that the comment below is missing!!.</span>
 
 <!--  This will not be displayed in the output format -->
 
@@ -127,8 +152,16 @@ _italic_   __bold__
 ```
 Note that the word *Statistics* is in italic here and the work **markdown** is in bold.
 
-*Bianca*
-**Sosnovski**
+Here is an example: *Bianca* **Sosnovski**
+
+### Example
+
+Write your full name in both italic and bold font.
+
+`Enter your answer below:`
+
+
+
   
 ### Lists
 
@@ -172,6 +205,17 @@ The code for the list above is:
     + Item 3a
     + Item 3b
 ```
+
+### Example
+
+Create a list of textbooks you will need to buy and/or download for free for your classes this semester.
+
+`Enter your code below:`
+
+
+
+
+
 ### Hyperlinks
 
 To add hyperlinks we surround the links with brackets, and then provide the link address in parentheses, like this [QCC](https://www.qcc.cuny.edu).
@@ -183,31 +227,35 @@ To add hyperlinks we surround the links with brackets, and then provide the link
 ## Embedding R code
 
 
-You can embed an R code chunk like this:
+As you see in the beginning of this lab, you can embed an R code chunk like this:
 
 ```{r}
 summary(cars)
 #cars is a built-in data set in R
 ```
 
-Note that the line above is a comment in the R code, and that you can add comments in the R code chunk with a pound sign. Another example:
+Note that the line preceeded by `#` is a comment in the R code, and that you can add comments in the R code chunk with a pound sign. 
 
-```{r}
-2*3
-# This is purely a comment that will be ignored by the R evaluator.
-```
 
-To add an inline code use a pair of backticks and the letter r. For example, `r 2*3`. We can also mark text as inline code by using just the pair of backticks. For example, `code`.
+### Example
+
+Enter a R code chunck that produce as a result the number 6.
+
+`Enter your code below:`
+
+
+
+To add an inline code use a pair of single backticks and the letter r. For example, `r 2*3` (compare this with the Rmd file). We can also mark text as inline code by using just the pair of backticks. For example, `code`.
 
 You can also embed plots in your rmd files. For example:
 
-```{r, echo=FALSE}
+```{r, echo = FALSE}
 plot(cars)
 ```
 
-You can do a lot of things in a code chunk: produce text output, tables, or graphics. You have fine control over all these output via chunk options, which can be provided inside the curly braces (between `{r and }`).
+You can do a lot of things in a code chunk: produce text output, tables, or graphics. You have complete control over all these output via chunk options, which can be provided inside the curly braces (between `{r and }`).
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+**Note:** the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot (if applicable).
 
 ### Example
 Create a code chunk that will produce the summary of the dataset `Seatbelts`.
@@ -245,6 +293,9 @@ $$ A= \pi r^2 $$
 Write the equation of the circumference of a circle. 
 
 `Enter your code below:`
+
+
+
 
 
 ## Lab Exercises and Writing Assignment
