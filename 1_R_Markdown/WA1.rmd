@@ -8,7 +8,7 @@ output:
 ---
 
 
-```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+```{r}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
@@ -42,5 +42,4 @@ Student should provide relevant details and possibly some examples. Student must
 **Feel free to allow the Campus Writing Center, L-118, to guide you.**
 
 **Take a copy of the assignment with you when visiting the Writing Center.**
-
 
