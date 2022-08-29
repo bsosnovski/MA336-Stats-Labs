@@ -1,5 +1,5 @@
 ---
-title: "WA 1"
+title: "Lab 1"
 author: "Student"
 date: "01/01/2001"
 output: 
@@ -8,39 +8,42 @@ output:
 ---
 
 
-```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-Use this template rmd file to submit your answers for the WA assigment. Update the YAML above to have your name and current date.
+Use this template rmd file to submit your answers for the Lab assigment. Update the YAML above to have your name and current date.
 
 
-# Writing Assignment (50 points)
+# Lab exercise (50 points) 
 
-In your own words, explain the differences among histograms, bar graphs, pie charts, time-series and Pareto charts. 
+In general, the lab component of the assignments will be some coding task(s) using R. Most of the time, the expectation is that students `copy` and `paste` R chunks of code from the lab instructions, then make some adjustments to that code to achieve the result required for the exercises.
 
-`Enter your answer below:`
+Peform the following taks.
 
+1. Write an R code that will compute the number 10 (10 pts)
 
-
-
-## WA Grading
-
-* Content
-Student should provide relevant details and possibly some examples. Student must be thoughtful and reflective and provide an excellent understanding of the concepts in question.
-
-* Conventions of language and mechanics
-   + No errors in grammar or spelling, uses complete sentences and clear speech. You are expected to use spell checker.
-   + Submissions must be done by the due dates.
-
-* For submission, write your asnwers in this document by the due date. No need to send anything by emails or print this.
-
-* Always be sure the final submission is good by checking the rendering of this document on the right side  of the screen.
+`Enter your code below:`
 
 
-**Feel free to allow the Campus Writing Center, L-118, to guide you.**
 
-**Take a copy of the assignment with you when visiting the Writing Center.**
+2. Write the equation for the Pythagora's theorem: **The square of the hypotenuse is equal to the sum of the squares of the legs**
+(10 pts)
+
+`Enter your code below:`
+
+
+
+3. Create a R Markdow file (a completely separate file from this) that contains the following content (30 pts):
+
+* a YAML header with an appropriate title, your name, and date
+* a chunck of code of any type you want
+* load a package (try to Google package names to use in this part)
+* some text with formatting
+
+
+
+
 
 
