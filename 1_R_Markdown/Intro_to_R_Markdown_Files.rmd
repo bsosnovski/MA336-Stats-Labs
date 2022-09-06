@@ -80,7 +80,7 @@ To load a package in R, we invoke the command ``library(package)`` where in ''pa
 Here is an example on how to invoke a package in R Markdown.
 
 ```{r}
-library("knitr")
+library("knitr") 
 ```
 
 **Note:** To run any R chunk of code, you must use the 3 backticks followed by R in curly braces and after the code you want to run, close the chunk with another set of 3 backticks. More on this later in this lab.
