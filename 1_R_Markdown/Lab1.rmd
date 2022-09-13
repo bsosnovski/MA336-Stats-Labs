@@ -22,7 +22,7 @@ In general, the lab component of the assignments will be some coding task(s) usi
 
 Peform the following taks.
 
-1. Write an R code that will compute the number 10. (10 pts)
+1. Write an R code that will compute the number 10 (10 pts)
 
 `Enter your code below:`
 
@@ -33,7 +33,7 @@ Peform the following taks.
 
 `Enter your code below:`
 
-
+**Hint**: exponents can be written using ^ symbol (as one would do in Webwork too)
 
 3. Create a R Markdow file (a completely separate file from this) that contains the following content (30 pts):
 
@@ -41,9 +41,3 @@ Peform the following taks.
 * a chunck of code of any type you want
 * load a package (try to Google package names to use in this part)
 * some text with formatting
-
-
-
-
-
-
