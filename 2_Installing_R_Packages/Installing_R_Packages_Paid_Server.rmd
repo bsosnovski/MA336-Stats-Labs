@@ -20,7 +20,7 @@ In this lab you will install the R package `gapminder`. The name of the package 
 
 In this lab you will learn:
 
-*  How to install R packages in Cocal with a paid server.
+*  How to install R packages in Cocal with a paid server. 
 
 
 ## Installing R packages
