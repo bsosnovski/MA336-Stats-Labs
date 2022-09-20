@@ -13,14 +13,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Installing R packages with Internet Access in Your Project
 
-Let’s say that you want to install the R package `gapminder` (the name of the package will change as you do different labs).
+In this lab you will install the R package `gapminder`. The name of the package you will  need to install for different labs may change.
+
+
+## General Goals
+
+In this lab you will learn:
+
+*  How to install R packages in Cocal with a paid server.
+
+
+## Installing R packages
 
 Do the following steps:
 
 1. Go to your `Home` directory.
 2. Create a Linux Terminal file in your project or open one that is already in your project.
-3. When the prompt appears (~$), type in an upper-case letter `R` and press the Return Key. This will start up R.
-4. Type in `install.packages("gapminder")`
+3. When the prompt appears (~$), type an upper-case letter `R` and press the Return Key. This will start up R.
+4. Type `install.packages("gapminder")`
 
 The following will be displayed:
 
@@ -73,7 +83,7 @@ This means that the package `gapminder` is installed in your project.
 
 7)	(Optional) If you type in the command: `.libPaths()`
 
-Then the something similar to the following will be displayed:
+Then something similar to the following will be displayed:
 
 ```
 [1] "/home/user/R/x86_64-pc-linux-gnu-library/4.1"
@@ -83,6 +93,6 @@ Then the something similar to the following will be displayed:
 >
 ```
 
-**Note:** You can see that the library directory was created and appears in [1].
+**Note:** You can see that the library directory was created and appears in line [1]. 
 
 Next time you install another package in the `Home` directory of your project, you will not need to create the library because it has already been created (you will NOT run steps 5 and 6). 
