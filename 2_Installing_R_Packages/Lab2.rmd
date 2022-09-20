@@ -8,9 +8,8 @@ output:
 ---
 
 
-```{r setup, include=FALSE, warning = FALSE, message=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
 ```
 
 Use this template rmd file to submit your answers for the Lab assigment. Don't forget to update the YAML above to have your name and current date.
@@ -19,20 +18,17 @@ Use this template rmd file to submit your answers for the Lab assigment. Don't f
 # Lab exercise (50 points) 
 
 
-1. Install the R package ``abbreviate``  in the Home directory in your project.
+1. Install the R package `abbreviate`  in the Home directory in your project.
 
 
-2. Run the chunk of code below:
+    The package `abbreaviate` can be found here: [https://cran.r-project.org/web/packages/abbreviate/index.html](https://cran.r-project.org/web/packages/abbreviate/index.html)
+
+
+2. Below is part of a code chunck that uses the library you just installed. Complete the code and run it. The result will be an abbreviation os the workds in the variable `txt`.
 
 ```
 txt <- c("statistics", "mathematics", "programming", "maximum", "average")
 abbreviate_text(txt,3)
 ```
 
-**Note:** If you install the package successfully the code above will run without issues.
-
-
-
-
-
-
+**Note:** If you installed the package successfully and completed the code above correctly, it will run without issues.
