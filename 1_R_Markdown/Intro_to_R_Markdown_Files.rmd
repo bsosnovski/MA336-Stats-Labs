@@ -24,6 +24,12 @@ In this lab you will learn:
 4. How to add code in your R Markdown file
 5. How to format your text and equations in R Markdown
 
+## Lab templates
+
+You will be completing each lab and writing assignment (WA) by writing your code and notes in the corresponding R Markdown document. 
+
+For example, for lab 1 open the answer template Rmd file called **Lab_1.rmd** in your project's directory for lab 1. Use it to add your code and notes for the lab. For WA 1 open the answer template Rmd file called **WA_1.rmd** in the same folder in your directory.
+
 ## Markdown
 
 Markdown is a way of adding to a plain text document formatting such as headers, lists, emphasis, quotes, links to URLs and images, and more.
