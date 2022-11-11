@@ -27,7 +27,7 @@ Perform the following tasks.
 
 
 
-2. Write the equation for the Pythagora's theorem: **The square of the hypotenuse is equal to the sum of the squares of the legs**
+2. Write the equation for Pythagora's theorem: **The square of the hypotenuse is equal to the sum of the squares of the legs**
 (10 pts)
 
 `Enter your code below:`
