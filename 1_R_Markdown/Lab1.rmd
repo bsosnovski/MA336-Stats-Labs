@@ -1,5 +1,5 @@
 ---
-title: "Lab 1"
+title: "Lab 1 - R Markdown"
 author: "Student"
 date: "01/01/2001"
 output: 
@@ -10,17 +10,16 @@ output:
 
 ```{r}
 knitr::opts_chunk$set(echo = TRUE)
-
 ```
 
-Use this template rmd file to submit your answers for the Lab assigment. Update the YAML above to have your name and current date.
+Use this template rmd file to submit your answers for the Lab assignment. Update the YAML above to have your name and current date.
 
 
 # Lab exercise (50 points) 
 
 In general, the lab component of the assignments will be some coding task(s) using R. Most of the time, the expectation is that students `copy` and `paste` R chunks of code from the lab instructions, then make some adjustments to that code to achieve the result required for the exercises.
 
-Peform the following taks.
+Perform the following tasks.
 
 1. Write an R code that will compute the number 10 (10 pts)
 
@@ -33,11 +32,11 @@ Peform the following taks.
 
 `Enter your code below:`
 
-**Hint**: exponents can be written using ^ symbol (as one would do in Webwork too)
+**Hint**: exponents can be written using the ^ symbol (as one would do in Webwork too)
 
-3. Create a R Markdow file (a completely separate file from this) that contains the following content (30 pts):
+3. Create an R Markdown file (a completely separate file from this) that contains the following content (30 pts):
 
 * a YAML header with an appropriate title, your name, and date
-* a chunck of code of any type you want
+* a chunk of code of any type you want
 * load a package (try to Google package names to use in this part)
 * some text with formatting
