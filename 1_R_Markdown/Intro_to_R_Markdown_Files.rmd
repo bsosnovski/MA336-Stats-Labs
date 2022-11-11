@@ -16,35 +16,35 @@ This lab will show you how to write an R Markdown document.
 
 ## General Goals
 
-In this lab you will learn:
+In this lab, you will learn the following:
 
 1. What R Markdown is
 2. How to create an R Markdown file
-2. How to use most commonly R Markdown syntax
+2. How to use the most common R Markdown syntax
 4. How to add code in your R Markdown file
 5. How to format your text and equations in R Markdown
 
 ## Lab templates
 
-You will be completing each lab and writing assignment (WA) by writing your code and notes in the corresponding R Markdown document. 
+You will complete each lab and writing assignment (WA) by writing your code and notes in the corresponding R Markdown document. 
 
-For example, for lab 1 open the answer template Rmd file called **Lab_1.rmd** in your project's directory for lab 1. Use it to add your code and notes for the lab. For WA 1 open the answer template Rmd file called **WA_1.rmd** in the same folder in your directory.
+For example, for lab 1, open the answer template Rmd file called **Lab_1.rmd** in your project's directory for lab 1. Use it to add your code and notes for the lab. For WA 1, open the answer template Rmd file called **WA_1.rmd** in the same folder in your directory.
 
 ## Markdown
 
-Markdown is a way of adding to a plain text document formatting such as headers, lists, emphasis, quotes, links to URLs and images, and more.
+Markdown is a way of adding to a plain text document formatting, such as headers, lists, emphasis, quotes, links to URLs and images, and more.
 
 Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to HTML.
 
 ## R Markdown
 
-R Markdown allows you to write a  HTML, PDF, and/or MS Word documents, a presentation or even a book by just using Markdown syntax and embedded programming code.
+R Markdown allows you to write HTML, PDF, and/or MS Word documents, a presentation, or even a book using Markdown syntax and embedded programming code.
 
 R Markdown files have extension **.Rmd**
 
 The "**R**" in R Markdown stands for the [R statistical computing](https://www.R-project.org/) language.
 
-R Markdown files contain three important types of content:
+R Markdown files contain three essential types of content:
 
 1. An (optional) YAML header surrounded by ---s.
 2. Chunks of R code surrounded by ```.
@@ -57,7 +57,7 @@ We will cover these contents in this lab.
 
 ## Creating Rmd Files (Cocalc.com)
 
-To create an Rmd file in Cocalc. com, go to the directory (location) in your project where you want the file to be. Then:
+To create an Rmd file in Cocalc. com, go to your project's directory (location) where you want the file to be. Then:
 
 1. Click on "New"
 2. Choose the option "RMarkdown (.rmd)" 
@@ -75,25 +75,25 @@ Create an Rmd file named "My_File" in the same directory where this lab is locat
 
 ## Load Packages
 
-Packages are collections of R functions, data, and some compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages.  Others packages are available for download and  must be installed. 
+Packages are collections of R functions, data, and some compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages.  Others packages are available for download and must be installed. 
 
-In Cocalc, a large number of packages are already installed, so there is no need to install them.
+In Cocalc, many packages are already installed, so there is no need to install them.
 
-Once a package is installed, they have to be loaded into the session to be used.
+Once a package is installed, it must be loaded into the session to be used.
 
 To load a package in R, we invoke the command ``library(package)`` where in ''package'' will be replaced with the name of the package you want to load.
 
-Here is an example on how to invoke a package in R Markdown.
+Here is an example of how to invoke a package in R Markdown.
 
 ```{r}
-library("knitr") 
+library("knitr")
 ```
 
-**Note:** To run any R chunk of code, you must use the 3 backticks followed by R in curly braces and after the code you want to run, close the chunk with another set of 3 backticks. More on this later in this lab.
+**Note:** To run any R chunk of code, you must use the 3 backticks followed by R in curly braces, and after the code you want to run, close the chunk with another set of 3 backticks. More on this later in this lab.
 
 The ``knitr`` package extends the basic markdown syntax to include chunks of executable R code.
 
-Cocalc already have this package loaded for you. But if you are running your code, say in R Studio on your own computer, you would need to install and include the ``knitr`` in the library of your document or script.
+Cocalc already has this package loaded for you. But if you are running your code, say in R Studio on your computer, you would need to install and include the ``knitr`` in the library of your document or script.
 
 
 ### Example
@@ -104,7 +104,8 @@ Now load the package called ``dplyr``.
 
 
 
-**Note:** You will learn how to install packages for R in Cocalc in lab 2 (Stay tuned!!!).
+
+**Note:** You will learn how to install packages for R in Cocalc in lab 2 (Stay tuned.).
 
 
 
@@ -113,11 +114,11 @@ Now load the package called ``dplyr``.
 
 I hope you already noticed some of the formatted text above in this rmd file.
 
-Here some basics formatting of text in Markdown.
+Here is some basic formatting of text in Markdown.
 
 ### Comments
 
-Note that you can add comments in Markdown documents as follows: ``<!-- your comment -->``. The comments will not be displayed in any output format.
+You can add comments in Markdown documents as follows: ``<!-- your comment -->``. The comments will not be displayed in any output format.
 
 <span style='color:#d2691e'>Compare this line here in the rmd file (on the left in Cocalc.com) and the output format in HTML on the right (Note that the comment below is missing!!.</span>
 
@@ -129,7 +130,7 @@ Plain code blocks are displayed in a fixed-width font but not evaluated by R.
 
 ```
 2*3
-This text is displayed verbatim
+This text is displayed verbatim.
 ```
 You will see this throughout this rmd file to display examples of codes that are not evaluated.
 
@@ -156,7 +157,7 @@ You will see this throughout this rmd file to display examples of codes that are
 _italic_   __bold__
 
 ```
-Note that the word *Statistics* is in italic here and the work **markdown** is in bold.
+Note that the word *Statistics* is italic here, and the word **markdown** is bold.
 
 Here is an example: *Bianca* **Sosnovski**
 
@@ -187,10 +188,6 @@ The code for the list above is:
     + Item 2b
     
 ```
-* Grade test 1
-* Grade HW
-    + HW 1
-    + HW 2
 
 
 ##### Ordered list
@@ -224,7 +221,7 @@ Create a list of textbooks you will need to buy and/or download for free for you
 
 ### Hyperlinks
 
-To add hyperlinks we surround the links with brackets, and then provide the link address in parentheses, like this [QCC](https://www.qcc.cuny.edu).
+To add hyperlinks, we surround the links with brackets and then provide the link address in parentheses, like this [QCC](https://www.qcc.cuny.edu).
 
 ```
 [QCC](https://www.qcc.cuny.edu)
@@ -233,25 +230,25 @@ To add hyperlinks we surround the links with brackets, and then provide the link
 ## Embedding R code
 
 
-As you see in the beginning of this lab, you can embed an R code chunk like this:
+As you see at the beginning of this lab, you can embed an R code chunk like this:
 
 ```{r}
 summary(cars)
 #cars is a built-in data set in R
 ```
 
-Note that the line preceeded by `#` is a comment in the R code, and that you can add comments in the R code chunk with a pound sign. 
+Note that the line preceded by `#` is a comment in the R code and that you can add comments in the R code chunk with a pound sign. 
 
 
 ### Example
 
-Enter a R code chunck that produce as a result the number 6.
+Enter an R code chunk that produces, as a result, the number 6.
 
 `Enter your code below:`
 
 
 
-To add an inline code use a pair of single backticks and the letter r. For example, `r 2*3` (compare this with the Rmd file). We can also mark text as inline code by using just the pair of backticks. For example, `code`.
+To add an inline code, use a pair of single backticks and the letter r. For example, `r 2*3` (compare this with the Rmd file). We can also mark text as inline code using a pair of backticks. For example, `code`.
 
 You can also embed plots in your rmd files. For example:
 
@@ -259,18 +256,18 @@ You can also embed plots in your rmd files. For example:
 plot(cars)
 ```
 
-You can do a lot of things in a code chunk: produce text output, tables, or graphics. You have complete control over all these output via chunk options, which can be provided inside the curly braces (between `{r and }`).
+You can do many things in a code chunk: produce text output, tables, or graphics. You have complete control over all these outputs via chunk options, which can be provided inside the curly braces (between `{r and }`).
 
 **Note:** the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot (if applicable).
 
 ### Example
-Create a code chunk that will produce the summary of the dataset `Seatbelts`.
+Create a code chunk to produce the dataset `Seatbelts` summary.
 
 `Enter your code below:`
 
 
 ### Example
-Create a code chunk that will produce a plot of the dataset `Seatbelts`.
+Create a code chunk to plot the dataset `Seatbelts`.
 
 `Enter your code below:`
 
@@ -278,7 +275,7 @@ Create a code chunk that will produce a plot of the dataset `Seatbelts`.
 
 ## Writing mathematical equations and formulas
 
-Of course, you can include math formulas by using dollar signs around the equation in Latex syntax (Using $ symbols around the equation).
+Of course, you can include math formulas using dollar signs around the equation in Latex syntax (Using $ symbols around the equation).
 
 The following is the code for writing the equation of the area of a circle in two formats.
 
@@ -310,9 +307,8 @@ The instructions for the lab and WA are in the Lab_1.rmd and WA_1.rmd files, whi
 
 ## References
 
-Parts of the material used in this document are adaptations or excerpt from the following:
+Parts of the material used in this document are adaptations or excerpts from the following:
 
 * Grolemund, Garrett. "Introduction to R Markdown."  July 16, 2014. https://rmarkdown.rstudio.com/articles_intro.html
 
 * "Markdown Basics." https://rmarkdown.rstudio.com/authoring_basics.html
-
