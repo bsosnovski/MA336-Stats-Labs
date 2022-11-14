@@ -13,14 +13,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Installing R packages with Internet Access in Your Project
 
-In this lab you will install the R package `gapminder`. The name of the package you will  need to install for different labs may change.
+In this lab, you will install the R package `gapminder`. The name of the package you will need to install for different labs may change.
 
 
 ## General Goals
 
-In this lab you will learn:
+In this lab, you will learn the following:
 
-*  How to install R packages in Cocal with a paid server. 
+*  How to install R packages in Cocal with a paid server.
 
 
 ## Installing R packages
@@ -45,7 +45,7 @@ Would you like to use a personal library instead? (yes/No/cancel)
 5)	Type `yes`.
 
 ```
-The following will be display:
+The following will be displayed:
 Would you like to create a personal library
 ‘~/R/x86_64-pc-linux-gnu-library/4.1’
 to install packages into? (yes/No/cancel)
@@ -53,7 +53,7 @@ to install packages into? (yes/No/cancel)
 
 6)	Type `yes` again.
 
-The following will be display:
+The following will be displayed:
 
 ```
 trying URL 'https://cloud.r-project.org/src/contrib/gapminder_0.3.0.tar.gz'
@@ -95,4 +95,4 @@ Then something similar to the following will be displayed:
 
 **Note:** You can see that the library directory was created and appears in line [1]. 
 
-Next time you install another package in the `Home` directory of your project, you will not need to create the library because it has already been created (you will NOT run steps 5 and 6). 
+Next time you install another package in your project's `Home` directory, you will not need to create the library because it has already been created (you will NOT run steps 5 and 6).
