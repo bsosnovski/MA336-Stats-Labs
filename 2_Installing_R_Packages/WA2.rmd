@@ -13,15 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-Use this template rmd file to submit your answers for the WA assigment. Update the YAML above to have your name and current date.
+Use this template rmd file to submit your answers for the WA assignment. Update the YAML above to have your name and current date.
 
 
 # Writing Assignment (50 points)
 
-Suppose you have a friend who knows very little about Statistics. In your words, write a paragraph or two in which you describe/explain each of the following to your friend. Keep the discussion as simple as possible, but be sure to get the main ideas across to your friend. 
+Suppose you have a friend who knows very little about Statistics. In your words, write a paragraph or two in which you describe/explain each of the following to your friend. Keep the discussion as simple as possible, but be sure to convey the main ideas to your friend. 
 1.	Describe the Empirical Rule.
-2.	Describe the Chebyshev’s Theorem.
-3.	Does the Chebyshev’s Theorem contradict the Empirical Rule? Explain.
+2.	Describe Chebyshev’s Theorem.
+3.	Does Chebyshev’s Theorem contradict the Empirical Rule? Explain.
 
 
 `Enter your answer below:`
@@ -32,19 +32,18 @@ Suppose you have a friend who knows very little about Statistics. In your words,
 ## WA Grading
 
 * Content
-Student should provide relevant details and possibly some examples. Student must be thoughtful and reflective and provide an excellent understanding of the concepts in question.
+Students should provide relevant details and possibly some examples. Students must be thoughtful and reflective and offer an excellent understanding of the concepts in question.
 
 * Conventions of language and mechanics
-   + No errors in grammar or spelling, uses complete sentences and clear speech. You are expected to use spell checker.
-   + Submissions must be done by the due dates.
+   + No errors in grammar or spelling; uses complete sentences and clear speech. You are expected to use a spell checker.
+   + Submissions must be made by the due dates.
 
-* For submission, write your asnwers in this document by the due date. No need to send anything by emails or print this.
+* For submission, write your answers in this document by the due date—no need to send anything by email or print this.
 
-* Always be sure the final submission is good by checking the rendering of this document on the right side  of the screen.
+* Always be sure the final submission is good by checking the rendering of this document on the right side of the screen.
 
 
 **Feel free to allow the Campus Writing Center, L-118, to guide you.**
 
 **Take a copy of the assignment with you when visiting the Writing Center.**
-
 
