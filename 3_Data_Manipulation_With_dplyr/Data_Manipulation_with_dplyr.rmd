@@ -1,0 +1,346 @@
+---
+title: "Lab 3 Data Manipulation with dplyr"
+author: "B. Sosnovski"
+date: "10/04/2022"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Lab 3 Data manipulation with dplyr
+
+Data manipulation consists of modifying data to make it easier to read and more organized. We manipulate data for analysis and visualization.
+
+There are different ways to manipulate data in R, and we will use a couple of functions in the package `dplyr`.  We are going to look at filtering data, grouping data, and summarizing data.  
+
+
+## General goals
+
+In this lab, you will learn the following:
+
+1. How to load some data into R
+2. How to see a little bit of how the data is structured
+3. How to manipulate data using dplyr
+
+
+
+## Important info
+
+Data for NYC film permits used in this lab instructions was obtained from the NYC Open Data website. The Film_Permits.csv file for this lab is already conveniently in the lab's folder in your project's directory on Cocalc.com. But you can also find it here: <a href="https://data.cityofnewyork.us/api/views/tg4x-b46p/rows.csv?accessType=DOWNLOAD" download>Film_Permits.csv</a>
+
+NYC makes many data about many things open and free for anyone to download and look at. This is the NYC Open Data website: [https://opendata.cityofnewyork.us](https://opendata.cityofnewyork.us). 
+
+We also are going to use a dataset called *us-cities-demographics.csv*.
+This dataset contains information about the demographics of all US cities and census-designated places with a population greater or equal to 65,000. 
+This data comes from the US Census Bureau's 2015 American Community Survey.
+The data file is available here: [https://public.opendatasoft.com/explore/dataset/us-cities-demographics/information/](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/information/)
+
+
+
+## More resources for leaning R
+
+There are numerous resources for learning about R; you will find some available on this webpage: [resouces page](https://crumplab.github.io/psyc3400/Resources.html). 
+
+It is not required for any of the MA336 Labs, but if you are interested in downloading and installing R and R Studio at home to your computer (it's free), you can check how to do so here: [general introduction to R and Rstudio](https://crumplab.github.io/statisticsLab/software.html#r).
+
+
+## Get some data
+
+To create a frequency table, graph data, and calculate the mean and standard deviation, we need to have some data first. 
+
+With R, that's not entirely true. The default installation of R comes with several data sets. 
+
+Here are some of the pre-loaded data sets in R: 
+
+* `iris` -> Edgar Anderson's iris data
+* `women` -> Average heights and weights for American women
+* `pressure` -> Vapor pressure of mercury as a function of temperature
+* `mtcars` -> Motor trend car road tests
+* `cars` -> Speed and stopping distances of cars
+
+Let's look at the data set called `women`.
+
+```{r}
+women
+```
+
+Because R is a language built for statistics, it contains many functions that allow you generate random data.
+
+```{r}
+rnorm(20, mean=8, sd=1.5)
+```
+
+With the code above, you just made R to sample 20 numbers with a normal distribution with a mean of 8 and a standard deviation of 1.5 (later in the course, we will cover this type of distribution). 
+
+In future labs, we will look at how to use R to generate samples of numbers according to other types of distributions.
+
+
+## Reading data
+
+Let's do something that might be more interesting for now. We will focus on grabbing data from a local file or from a URL. 
+
+Suppose we would like to know *what kind of film productions are being shot in NYC*.
+
+To answer this question, let's use the data set in the file *Film_Permits.csv.*
+
+Searching through the data, we can find a data file that lists the locations of film permits for shooting movies throughout NYC's five boroughs. There are multiple ways to load/import this data into R.
+
+Use the following commands to load (import) the data.
+
+```{r}
+library(data.table)
+nyc_films <-fread("Film_Permits.csv")
+nyc_films
+```
+
+If you have Internet access enabled in your project, you can also try loading the data from the source:
+
+```{r, eval=F}
+library(data.table)
+nyc_films <- fread("https://data.cityofnewyork.us/api/views/tg4x-b46p/rows.csv?accessType=DOWNLOAD")
+```
+
+**Note:** The code above will not be evaluated in R because the option `eval` is set to `FALSE`. To run it, you must change the value of `eval` to `TRUE`.
+
+
+## Data frames
+
+The data above is stored in a `data frame`. A data frame is a rectangular collection of variables (in the columns) and observations (in the rows). It looks like an Excel spreadsheet if you are familiar with Excel.
+
+The variable `nyc_films` stores the data frame imported from the file *Film_Permits.csv*.
+
+It is possible to build a data frame from scratch. But most of the time, we will use some actual data in the labs to obtain our data frames from reading files. 
+
+
+## The data structure
+
+Let's look at how the data is structured. For example, to the size of this data set (data frame), we can use the function `dim`.
+
+```{r}
+data_size <- dim(nyc_films)
+data_size
+```
+
+It's helpful to know about it if you need to look at the data frame itself. But this data frame is massive; it has `r data_size[1]` rows and `r data_size[2]` columns of data. That's a lot to look at.
+
+We examine what is in a data frame in R using different functions. Here are some examples:  `head()`, `tail()`, `str()`, `nrow`, `ncol`, `colnames()`, and `summary`.
+
+```{r}
+colnames(nyc_films)
+head(nyc_films)
+str(nyc_films)
+```
+
+
+### Example
+
+Use the file *us-cities-demographics.csv* to code the following:
+
+1. Import the file into R using the name `demo` for storing the data. 
+
+2. Find out the size of the file and the columns' names and read the top lines of the file.
+
+`Enter your code below:`
+
+
+
+
+## Note on column names in R
+
+If you are new to R and mainly from an Excel background, think more about column names than you usually might.  Excel is very flexible when it comes to naming columns.
+
+To ease this process, it is best to keep column names simple, without spaces, and without special characters (e.g. !, @, &, $, etc.). 
+
+But sometimes, we import a data set with spaces or other symbols in the name of the variables (columns). 
+
+One way to do that is by renaming the columns without spaces or special characters. Later on, we will see how to deal with the issue differently.
+
+```{r}
+
+colnames(nyc_films)[1]<-"Event_ID"
+colnames(nyc_films)
+```
+
+**Note:** column 1 was renamed `Event_ID` in the above code. 
+
+### Example
+
+For the data frame corresponding to the file *us-cities-demographics.csv*, remove spaces from the variables *Male Population*, *Female Population*, *Total Population*, and *State Code*.
+Male Population*, *Female Population*, *Total Population*, and *State Code*.
+
+`Enter your code below:`
+
+
+
+
+## The package dplyr in tidyverse
+
+The `tidyverse` package is designed for data science and contains other packages that all work harmoniously. 
+
+The packages in `tidyverse` that we will cover in this and future labs are `dplyr` and `ggplot2`. You can use the function `library()` to load the whole tidyverse package or the individual packages.
+
+The package `dplyr` provides tools for the most common data manipulation tasks. It is built to work directly with data frames.
+
+We are going to learn a couple of key `dplyr` functions that allow you to deal with data manipulation challenges:
+
+* `filter()`: Pick observations (rows) by their values.
+* `summarize()`: Collapse many values into a single summary.
+
+These functions can be used in conjunction with `group_by()`, which changes each of the functions above from operating on the entire dataset to working on it group by group. 
+
+Let’s dive in and see how these functions work.
+
+
+## Summaries with summarize() and group_by()
+
+The `group_by()` function splits the data into groups upon which some operations can be run. 
+
+`group_by()` is often used together with `summarize()`, which collapses each group into a single-row summary of that group.
+
+
+We might have questions about this data in the file *Film_Permits.csv* that can help us understand how to use these functions.
+
+
+### Question 1: Where are the most film permits being requested?
+
+For which of the five boroughs of NYC most of the film permits are being requested? 
+
+We can find out by creating a frequency table for the data. We need to count how many film permits are made in each borough.
+
+
+```{r}
+library(dplyr)
+
+counts <- nyc_films %>%
+          group_by(Borough) %>%
+          summarize(count_of_permits = length(Borough))
+counts
+```
+
+*Pipes* (`%>%`) let you take the output of one function and send it directly to the next. 
+
+The above code grouped the data by each of the five boroughs and then counted the number of times each Borough occurred (using the `length` function). The result is a new variable called `counts`.
+
+#### Example
+
+Enter an R code below that shows how many cities each state had a population of more than 65K in 2015.
+
+`Enter your code below:`
+
+
+
+
+### Question 2: What kind of "films" are being made, and what is the category?
+
+You might be skeptical of what you are doing here, copying and pasting things. Soon you'll see how fast you can do something by copying, pasting, and making a few changes. 
+
+Let's quickly ask another question about what kinds of films are being made. The column `Category` gives us some information about that. Let's copy-paste the code we already made above and see what categories the films fall into. See if you can tell what was changed in the code to make this work:
+
+```{r}
+counts <- nyc_films %>%
+          group_by(Category) %>%
+          summarize(count_of_permits = length(Category))
+counts
+
+```
+
+Let's notice the changes. 
+
+1. `Borough` was changed to `Category`. That was the main thing.
+
+2. Note that none of the `library()` commands are used again, and I didn't re-run the very early code to get the data. R already has those things in its memory, so we don't need to do that again. If you ever clear the memory of R, you will need to reload those things. 
+
+
+#### Example
+
+Now let's use another R function, `sum`, to add the female population per state.
+
+
+`Enter your code below:`
+
+
+
+
+
+### Question 3: What is the number of permits for each borough category? 
+
+We can use the function `group_by` with more than one parameter, i.e., group by more than one variable. 
+
+
+```{r}
+
+counts <- nyc_films %>%
+          group_by(Borough,Category) %>%
+          summarize(count_of_permits = length(Category))
+head(counts)
+
+tail(counts)
+```
+
+We did two critical things. First, we added `Borough` and `Category` into the `group_by()` function. This automatically gives separate counts for each film category for each Borough.
+
+
+#### Example
+
+Enter a chunk of code to group the demographic data by *State Code* and *Race*, which adds population (Count) for each race for each state.
+
+
+`Enter your code below:`
+
+
+
+
+## Filtering data with dplyr
+
+`filter()` allows you to subset observations (rows) based on their values. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame.
+
+The library `dplyr` allows us to filter data by a single Borough. Let's use the function `filter()` for the NYC permits data to find the number of permits only for Manhattan.
+
+```{r}
+
+counts <- nyc_films %>%
+         group_by(Category) %>%
+         filter(Borough=='Manhattan')%>%
+         summarize(count_of_permits = length(Category))
+
+counts
+
+```
+
+Now let's do something similar with the demographic data.
+
+
+### Example
+
+Enter a chunk of code to group the demographic data by *State Code* and add the population of Hispanic or Latino (Count) for each state.
+
+
+`Enter your code below:`
+
+
+
+
+## dplyr summary
+
+For all functions in `dplyr`, we have the following:
+
+1. The first argument is a data frame.
+
+2. The subsequent arguments describe what to do with the data frame using the variable names (without quotes).
+
+3. The result is a new data frame.
+
+
+## References
+
+The material used in this document contains excerpts and adaptions from:
+
+* Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
+
+* Data Carpentry. "Aggregating and analyzing data with dplyr." [https://datacarpentry.org/dc_zurich/R-ecology/04-dplyr.html](https://datacarpentry.org/dc_zurich/R-ecology/04-dplyr.html)
+
+* Hadley Wickham and Garrett Grolemund. "R for Data Science."[https://r4ds.had.co.nz/index.html](https://r4ds.had.co.nz/index.html)
