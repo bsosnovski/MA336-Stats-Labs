@@ -1,0 +1,59 @@
+---
+title: "Lab 3 - Manipulating data with dplyr"
+author: "Student"
+date: "01/01/2001"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Use this template rmd file to submit your answers for the Lab assignment. Please update the YAML above to have your name and current date.
+
+
+# Lab exercise (50 points) 
+
+
+1. Import/Load the data set `nyc_census_tracts.csv` into your lab assignment's workspace.
+
+`Enter your code below:`
+
+
+
+
+2. Use R to find out the names of the variables and how many rows and columns there are in the data frame.
+
+`Enter your code below:`
+
+
+
+
+3. Use R to determine which borough has the most Census tracts in the data.
+
+`Enter your code below:`
+
+
+
+
+4. Describe the two boroughs with the most number of Census tracts according to what you obtained above.
+
+`Enter your answer below:`
+
+
+
+
+5. Use R to determine the number of women in the borough of Queens.
+
+`Enter your code below:`
+
+
+
+## Reference
+
+MuonNeutrino (2017). New York City Census Data: Demographic, Economic, and Location Data for Census Tracts in NYC, Version 2. 
+Retrieved Nov 10, 2020, from [https://www.kaggle.com/datasets/muonneutrino/new-york-city-census-data?resource=download](https://www.kaggle.com/datasets/muonneutrino/new-york-city-census-data?resource=download)
+
