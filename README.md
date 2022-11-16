@@ -1,4 +1,4 @@
-# MA336 Labs and Writing Assignments
+# MA336 Labs and WAs
 Repository for MA336 Statistics course's labs and writing assignments.
 
 This repository contains the source code for Rmd files and supporting files for the lab and writing assignments using R 
@@ -14,4 +14,3 @@ License: CC BY-SA 4.0
 
 Video tutorials about the contents in these labs are available here: 
 https://www.youtube.com/playlist?list=PL2z4p4gzJ_rOt31AAxGi37rVM-tsy-aQ9
-
