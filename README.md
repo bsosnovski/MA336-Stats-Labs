@@ -1,8 +1,8 @@
 # MA336 Labs and Writing Assignments
-
+Repository for MA336 Statistics course's labs and writing assignments.
 
 This repository contains the source code for Rmd files and supporting files for the lab and writing assignments using R 
-on Cocalc.com for an MA336 Statistics course at QCC.
+on Cocalc.com for an MA336 course at QCC.
 
 The vast majority of the material used in these documents contains excerpts and modifications from 
 the lab manual, which is part of the "Answering Questions with Data" bundle.
