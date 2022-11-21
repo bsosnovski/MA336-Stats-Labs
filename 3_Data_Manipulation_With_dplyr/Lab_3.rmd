@@ -54,6 +54,6 @@ Use this template rmd file to submit your answers for the Lab assignment. Please
 
 ## Reference
 
-MuonNeutrino (2017). New York City Census Data: Demographic, Economic, and Location Data for Census Tracts in NYC, Version 2. 
+MuonNeutrino. New York City Census Data: Demographic, Economic, and Location Data for Census Tracts in NYC, Version 2. 
 Retrieved Nov 10, 2020, from [https://www.kaggle.com/datasets/muonneutrino/new-york-city-census-data?resource=download](https://www.kaggle.com/datasets/muonneutrino/new-york-city-census-data?resource=download)
 
