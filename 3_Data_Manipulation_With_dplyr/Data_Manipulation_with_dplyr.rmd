@@ -167,7 +167,7 @@ head(nyc_films$`Event ID`)
 
 **Note:** the above code asks to display the top values in the column *Event ID* in the data frame code *nyc_films*. Note the use of the dollar sign `$`.
 
-**Option 2:** Another way to do that is by renaming the columns without spaces or special characters. Later on, we will see how to deal with the issue differently.
+**Option 2:** Another way to do that is by renaming the columns without spaces or special characters. 
 
 ```{r}
 
