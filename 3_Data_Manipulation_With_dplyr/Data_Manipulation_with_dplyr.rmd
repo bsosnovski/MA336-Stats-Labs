@@ -337,7 +337,7 @@ For all functions in `dplyr`, we have the following:
 
 ## References
 
-The material used in this document contains excerpts and adaptions from:
+This document contains excerpts and adaptions from:
 
 * Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
 
