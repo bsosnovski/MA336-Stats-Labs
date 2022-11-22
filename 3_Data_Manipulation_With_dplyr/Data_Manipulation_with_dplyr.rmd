@@ -157,7 +157,17 @@ To ease this process, it is best to keep column names simple, without spaces, an
 
 But sometimes, we import a data set with spaces or other symbols in the name of the variables (columns). 
 
-One way to do that is by renaming the columns without spaces or special characters. Later on, we will see how to deal with the issue differently.
+**Option 1:** One way to deal with this is to invoke the columns with spaces or special characters by surrounding their names between single backticks: `column_name`.
+
+```{r}
+
+head(nyc_films$`Event ID`)
+
+```
+
+**Note:** the above code asks to display the top values in the column *Event ID* in the data frame code *nyc_films*. Note the use of the dollar sign `$`.
+
+**Option 2:** Another way to do that is by renaming the columns without spaces or special characters. Later on, we will see how to deal with the issue differently.
 
 ```{r}
 
