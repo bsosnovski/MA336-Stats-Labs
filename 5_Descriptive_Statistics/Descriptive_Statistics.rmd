@@ -1,0 +1,380 @@
+---
+title: "Lab 5 Descriptive Statistics"
+author: "B. Sosnovski"
+date: "03/06/2022"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+   
+# Descriptive Statistics
+
+
+The purpose of this lab is to show you how to compute basic descriptive statistics, including measures of central tendency (mean, mode, median) and variation (range, variance, standard deviation). 
+
+
+
+## General Goals
+
+In this lab, you will learn the following:
+
+1. To compute measures of central tendency using R
+2. To compute measures of variation using R
+3. To ask some questions about a data set using descriptive statistics
+
+## Important info
+
+We will use the gapminder project data for this lab.
+
+
+
+## Making numbers in R
+
+To do descriptive statistics, we put some numbers in a variable. You can also do this using the `c()` command, which stands for "combine."
+
+```{r}
+my_numbers <- c(1,2,3,4)
+my_numbers
+
+my_names <- c("Anna", "Bren", "Carlos", "Danny")
+my_names
+```
+
+There are a few other handy ways to make numbers. We can use `seq()` to make a sequence. 
+
+```{r}
+one_to_forty <- seq(1,40,1)
+one_to_forty
+
+even_numbers <- seq(2,39,2)
+even_numbers
+```
+
+We can repeat things using `rep()`. Here's making five times the number 10 and eleven times the number 1:
+
+```{r}
+rep(10,5)
+rep(1,11)
+all_together_now <- c(rep(10,5),rep(1,11))
+all_together_now
+```
+
+**Note:** the syntax is `rep(object, number of repetitions)`
+
+
+#### Example
+
+Store the letter grades below in a variable called `grades`.
+A, B, B, B, B, A, B, C, B, C, C, C, A, C, B, B
+
+
+`Enter your code below:`
+
+
+
+### Tabulating data
+
+
+A common task when analyzing data is the construction of frequency tables. You can use several functions in R for that purpose, one of them being `table()`.
+
+```{r}
+table(all_together_now)
+```
+
+This shows the frequency of each value in the data.
+
+
+#### Example
+
+Use R to tabulate the letter grades from the previous example.
+
+`Enter your code below:`
+
+
+
+### Sum
+
+Let's play with the numbers from 1 to 100. To create this sequence of numbers, we use the function `seq()` and then use the `sum()` function to add them up.
+
+```{r}
+one_to_one_hundred <- seq(1,100,1)
+sum(one_to_one_hundred)
+```
+
+#### Example
+
+Use R to create the list of the numbers between 143 and 246 (integers), and calculate their sum. Use a variable called "my_numbers2".
+
+`Enter your code below:`
+
+
+
+### Length
+
+We put 100 numbers into the variable `one_to_one_hundred`. We know how many numbers there are in there. How can we get R to tell us? We use `length()` for that. 
+
+```{r}
+length(one_to_one_hundred)
+```
+
+#### Example
+
+Find the length of the variable `my_numbers2` from the previous example.
+
+`Enter your code below:`
+
+
+
+## Central Tendency
+
+### Mean
+
+Remember, the mean of some numbers is their sum divided by the number of numbers. We can compute the mean like this:
+
+```{r}
+sum(one_to_one_hundred)/length(one_to_one_hundred)
+```
+
+Or, we could use the `mean()` function like this:
+
+```{r}
+mean(one_to_one_hundred)
+```
+
+### Median
+
+The median is the number in the exact middle of the numbers ordered from smallest to largest. If there are an even number of values (no number in the middle), then we take the number between the two (decimal .5). Use the `median()` function. 
+
+```{r}
+median(c(1,2,3))
+median(c(1,4,3,2))
+```
+
+#### Example
+
+Use R to calculate the mean and the median of a list of numbers that contains twenty times the number 15, six times the number 8, and thirteen times the number 9.
+
+`Enter your code below:`
+
+
+
+
+### Mode
+
+R does not have a base function for the Mode. You would have to write one for yourself. Here is an example of writing your mode function and then using it. I searched for how to do this on Google.
+
+Remember, the mode is the most frequently occurring number in the set. Below 1 occurs the most, so the mode will be one.
+
+```{r}
+Mode <- function(x) {
+ a <- table(x)
+ as.numeric(names(a)[a == max(a)])
+}
+
+x <- c(1,2,2,3,3,4)
+Mode(x)
+
+```
+
+#### Example
+
+Use R to calculate the mode of 2,1,2,2,4,4,5,2
+
+`Enter your code below:`
+
+
+
+### Variation
+
+We often want to know how variable the numbers are. We will look at descriptive statistics to describe this, such as the **range**, **variance**, the **standard deviation**, and a few others.
+
+First, let's remind ourselves what variation looks like (it's when the numbers are different). We will sample 100 numbers from a normal distribution (if we haven't covered this in the lecture yet, don't worry about it) with a mean of 10 and a standard deviation of 5 and then make a histogram to see the variation around 10.
+
+```{r}
+sample_numbers <- rnorm(100,10,5)
+hist(sample_numbers)
+```
+
+#### range
+
+The range in R is the *minimum* and *maximum* values in the set; we use the `range()` function [this is not the same as we computed in class].
+
+```{r}
+range(sample_numbers)
+
+```
+
+#### var = variance
+
+We can find the sample variance using `var()`. Note: divides by (n-1).
+
+```{r}
+var(sample_numbers)
+```
+
+#### sd = standard deviation
+
+We find the sample standard deviation using `sd()`. Note: divides by (n-1)
+
+```{r}
+sd(sample_numbers)
+```
+
+Remember that the standard deviation is just the square root of the variance, see:
+
+```{r}
+sqrt(var(sample_numbers))
+```
+
+#### All Descriptives
+
+Let's put all of the descriptives and other functions so far in one place:
+
+```{r}
+sample_numbers <- rnorm(100,10,5)
+sum(sample_numbers)
+length(sample_numbers)
+mean(sample_numbers)
+median(sample_numbers)
+Mode(sample_numbers)
+range(sample_numbers)
+var(sample_numbers)
+sd(sample_numbers)
+```
+
+##### Example
+
+Use R to find all descriptives of the variable `my_numbers2`.
+
+`Enter your code below:`
+
+
+
+### Descriptives by conditions
+
+Sometimes you will have a single variable with some numbers, and you can use the above functions to find the descriptives for that variable. Other times (most often in this course), you will have a big data frame of numbers with different numbers in different conditions (like categories). You will want to find descriptive statistics for each set of numbers inside each condition. Fortunately, this is where R shines; it does it all for you in one go. 
+
+Let's illustrate the problem. Here I make a date frame with 10 numbers in each condition. There are 10 conditions; each labeled A, B, C, D, E, F, G, H, I, J. We will generate normal distributions for the numbers.
+
+
+```{r}
+scores <- rnorm(100,10,5)
+conditions <- rep(c("A","B","C","D","E","F","G","H","I","J"), each =10)
+my_df <- data.frame(conditions,scores)
+my_df
+```
+
+If you look at the `my_df` data frame, you will see it has 100 rows; there are 10 rows for each condition with a label in the `conditions` column and 10 scores for each condition in the `scores` column. 
+
+**What if you wanted to know the mean scores in each condition?**
+
+You would want to find 10 means. The slow way to do it would be like this:
+
+```{r}
+mean(my_df[my_df$conditions=="A",]$scores)
+mean(my_df[my_df$conditions=="B",]$scores)
+mean(my_df[my_df$conditions=="C",]$scores)
+# and then keep going
+```
+
+Nobody wants to do that! 
+
+#### group_by and summarize
+
+We can do everything all at once using the `group_by` and `summarize` functions from the `dplyr` package. 
+
+```{r}
+library(dplyr)
+my_df %>%
+  group_by(conditions) %>%
+  summarize(means = mean(scores))
+```
+
+A couple of things now. First, the printout of this was ugly. Let's fix that. we put the results of our code into a new variable, then use `knitr::kable` to print it out nicely when this document is built.
+
+
+```{r}
+summary_df <- my_df %>%
+               group_by(conditions) %>%
+               summarize(means = mean(scores))
+knitr::kable(summary_df)
+```
+
+#### multiple descriptives
+
+The best thing about the `dplyr` method is that we can add more than one function, and we'll get more than one summary returned, all in a nice format, let's add the standard deviation:
+
+```{r}
+summary_df <- my_df %>%
+               group_by(conditions) %>%
+               summarise(means = mean(scores),
+                         sds = sd(scores))
+knitr::kable(summary_df)
+```
+
+We'll add the min and the max too:
+
+```{r}
+summary_df <- my_df %>%
+               group_by(conditions) %>%
+               summarize(means = mean(scores),
+                         sds = sd(scores),
+                         min = min(scores),
+                         max = max(scores))
+knitr::kable(summary_df)
+```
+
+##### Example
+
+1. Create a data frame with 5 conditions for every 20 numbers with normal distribution with a mean of 12 and a standard deviation of 3.
+
+2. Calculate the mean and standard deviation for each condition.
+
+`Enter your code below:`
+
+
+
+
+## Describing gapminder
+
+Now that we know how to get descriptive statistics from R, we can do this will some actual data. Let's quickly ask a few questions about the gapminder data. 
+
+```{r}
+library(gapminder)
+gapminder_df <-gapminder
+gapminder_df
+```
+ 
+
+### What are some descriptive for Life expectancy by continent?
+
+Copy the code from the last part of descriptives using `dplyr`, then change the names like this:
+
+```{r}
+summary_df <- gapminder_df %>%
+               group_by(continent) %>%
+               summarize(means = mean(lifeExp),
+                         sds = sd(lifeExp),
+                         min = min(lifeExp),
+                         max = max(lifeExp))
+knitr::kable(summary_df)
+```
+
+#### Example
+
+Calculate the mean, standard deviation, minimum and maximum for each continent's GDP per Capita.
+
+`Enter your code below:`
+
+
+
+
+## References
+
+The material used in this document contains  excerpts and modifications from:
+
+* Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
