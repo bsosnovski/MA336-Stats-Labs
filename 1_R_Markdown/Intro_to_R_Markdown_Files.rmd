@@ -301,10 +301,6 @@ Write the equation of the circumference of a circle.
 
 
 
-## Lab Exercises and Writing Assignment
-
-The instructions for the lab and WA are in the Lab_1.rmd and WA_1.rmd files, which will be used to submit your work and answers.
-
 ## References
 
 Parts of the material used in this document are adaptations or excerpts from the following:
