@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Lab 3 Data manipulation with dplyr
+# Data manipulation with dplyr
 
 Data manipulation consists of modifying data to make it easier to read and more organized. We manipulate data for analysis and visualization.
 
