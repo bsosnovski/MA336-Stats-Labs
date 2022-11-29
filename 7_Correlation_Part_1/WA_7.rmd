@@ -1,0 +1,62 @@
+---
+title: 'WA 7 - Correlation (Part 1)'
+author: "Student Name"
+date: "01/01/2001"
+output: 
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+# Writing Assignment (40 points)
+
+Based on the results obtained for the lab assignment, answer the following:
+
+1. Imagine a researcher found a positive correlation between two variables and reported that the r value was +0.3. One possibility is that there is an actual correlation between these two variables. Discuss another possibility to explain the observation of +0.3 value between the variables.
+
+`Enter your answer below:`
+
+
+
+
+2. Explain the difference between a correlation of r = .3 and r = .7. What does a larger value of r represent?
+
+`Enter your answer below:`
+
+
+
+
+3. Explain the difference between a correlation of r = .6, and r = -.6.
+
+`Enter your answer below:`
+
+
+4. Based on the results of item 3 from the lab exercised above:  What are your conclusions about the relationship between negative affect and perceived corruption? Is this surprising to you?
+
+`Enter your answer below:`
+
+
+
+
+
+### WA Grading
+
+* Content
+
+Students must be thoughtful and reflective and provide an excellent understanding of the concepts in question. Students must give answers with relevant details. 
+
+* Conventions of language and mechanics
+   + No errors in grammar or spelling; uses complete sentences and clear speech. You are expected to use a spell checker.
+   + Submissions must be made by the due dates.
+
+* For submission, write your answers in this document by the due date—no need to send anything by email or print this.
+
+* Always be sure the final submission is good by checking the rendering of this document on the right side of the screen.
+
+
+**Feel free to allow the Campus Writing Center, L-118, to guide you.**
+
+**Take a copy of the assignment with you when visiting the Writing Center.**
+
