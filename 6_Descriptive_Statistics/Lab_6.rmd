@@ -1,5 +1,5 @@
 ---
-title: 'Lab 5 - Descriptive Statistics'
+title: 'Lab 6 - Descriptive Statistics'
 author: "Student Name"
 date: "01/01/2000"
 output: 
