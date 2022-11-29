@@ -1,4 +1,4 @@
-# MA336 Labs and WAs
+# MA336 Labs and WAs (under construction)
 Repository for MA336 Statistics course's labs and writing assignments.
 
 This repository contains the source code for Rmd files and supporting files for the lab and writing assignments using R 
