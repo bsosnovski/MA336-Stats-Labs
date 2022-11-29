@@ -32,6 +32,10 @@ nyc_films <-fread("Film_Permits.csv")
 colnames(nyc_films)
 ```
 
+We will also use the data containing information from 2020-2022 police-reported motor vehicle collisions in NYC (Motor_Vehicle_Collisions_Crashes.csv). 
+The data is available here:
+[https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95)
+
 ## Make Plots to answer questions
 
 
