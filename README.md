@@ -7,10 +7,14 @@ on Cocalc.com for an MA336 course at QCC.
 The material used in these documents contains excerpts and modifications from 
 the lab manual, which is part of the "Answering Questions with Data" bundle.
 
+Video tutorials about the contents in these labs are available here: 
+[https://www.youtube.com/playlist?list=PL2z4p4gzJ_rOt31AAxGi37rVM-tsy-aQ9](https://www.youtube.com/playlist?list=PL2z4p4gzJ_rOt31AAxGi37rVM-tsy-aQ9)
+
+The labs in html form can be found here:
+[https://rpubs.com/bsosnovski](https://rpubs.com/bsosnovski)
+
 * Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." 
 Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
 
 License: CC BY-SA 4.0
 
-Video tutorials about the contents in these labs are available here: 
-https://www.youtube.com/playlist?list=PL2z4p4gzJ_rOt31AAxGi37rVM-tsy-aQ9
