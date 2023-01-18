@@ -20,6 +20,7 @@ Based on the results obtained for the lab assignment, answer the following:
 
 
 
+The following 2 items are not related to the lab results.
 
 2. Explain the difference between a correlation of r = .3 and r = .7. What does a larger value of r represent?
 
