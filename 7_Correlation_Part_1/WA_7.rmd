@@ -42,11 +42,11 @@ The following 2 items are not related to the lab results.
 
 
 
-### WA Grading
+## WA Grading
 
 * Content
 
-Students must be thoughtful and reflective and provide an excellent understanding of the concepts in question. Students must give answers with relevant details. 
+Students must be thoughtful and reflective and provide an excellent understanding of the concepts in question. Students must give the answers with relevant details. 
 
 * Conventions of language and mechanics
    + No errors in grammar or spelling; uses complete sentences and clear speech. You are expected to use a spell checker.
@@ -60,4 +60,3 @@ Students must be thoughtful and reflective and provide an excellent understandin
 **Feel free to allow the Campus Writing Center, L-118, to guide you.**
 
 **Take a copy of the assignment with you when visiting the Writing Center.**
-
