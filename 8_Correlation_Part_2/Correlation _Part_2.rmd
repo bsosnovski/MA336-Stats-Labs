@@ -1,0 +1,263 @@
+---
+title: "Lab 8 Correlation (Part 2)"
+author: "B. Sosnovski"
+date: "03/28/2022"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Correlation (Part 2)
+
+
+In this lab, we will continue to discuss the correlation between two variables. You will learn to make scatter plots and regression lines in R.
+
+
+## General Goals
+
+The goals for this lab are the following:
+
+1. To make the scatter plot using R
+2. To discuss the possible meaning of correlations observed
+3. To plot the regression line
+
+## Important Info
+
+We continue to use data from the [World Happiness Report](http://worldhappiness.report) for 2018 and 2022.
+
+
+ 
+## Scatter plots
+
+Let's again generate two distributions, *x* and *y*, and plot the data in a scatter plot using ggplot2. Let's also return the correlation and print it on the scatter plot. 
+
+```{r}
+x <- c(4,15,5,14,9,8,17,10,6,7)
+y <- c(2,8,17,4,9,14,3,2,11,12)
+x
+y
+```
+
+**Note:** To use ggplot2 to graph the scatterplot, we need the data to be in a data frame, so we first put our x and y variables in a data frame.
+
+```{r, warning=F, message=F}
+library(ggplot2)
+# create a data frame for plotting
+my_df <- data.frame(x,y)
+# plot it
+ggplot(my_df, aes(x=x,y=y))+
+  geom_point()
+```
+
+
+
+### Example
+
+Create your data set with 8 pairs for variables *w* and *z* and plot the scatter plot.
+
+`Enter your code below:`
+
+
+
+
+## Lots of scatter plots
+
+Before we move on to real data, let's look at artificial data. Often we will have many measures of X and Y, split between a few different conditions, for example, A, B, C, and D. Let's make some data for X and Y, for each condition A, B, C, and D, and then use facet_wrapping to look at four scatter plots all at once.
+
+
+1. Let's create the data sets
+
+```{r}
+x<-rnorm(40,0,1)
+y<-rnorm(40,0,1)
+conditions<-rep(c("A", "B", "C","D"), each=10)
+x
+y
+conditions
+
+```
+
+2. Now we create the data frame (we need this to use ggplot2)
+
+```{r}
+all_df <- data.frame(conditions, x, y)
+# the following displays it nicely
+knitr::kable(all_df)
+
+```
+
+3. Finally, we make the scatterplot for each condition (we covered the facet_wrap function in a previous lab)
+
+```{r}
+ggplot(all_df, aes(x=x,y=y))+
+  geom_point()+
+  facet_wrap(~conditions)
+```
+
+We've seen how we can make four graphs at once. `Facet_wrap` will always try to make as many graphs as there are individual conditions in the column variable. In this case, there are four, so it makes four.
+
+
+### Example
+
+Create a data set with 6 conditions that are people's names, each with 12 pairs of x and y from the uniform distribution (with parameters of your choice). Then plot the scatter plot.
+
+`Enter your code below:`
+
+
+
+
+## Computing the correlations all at once
+
+
+Note that the scatter plots don't show the correlation (r) values. We will make a table of the correlations in addition to the scatter plot. For this, we again use package `dplyr`.
+
+
+### Chance correlations (again!)
+
+We will find some correlations by chance alone by generating artificial data. 
+
+It's a repeat of what we did before, with a few more added conditions. Let's look at 20 conditions, with random numbers for *x* and *y* in each. For each, the sample size will be 10. We'll make the fake data, then make a big graph to look at all. And, even though we get to regression later in the lab, I'll put the best-fit line onto each scatter plot, so you can "see the correlations."
+
+```{r}
+x<-rnorm(10*20,0,1)
+y<-rnorm(10*20,0,1)
+conditions<-rep(1:20, each=10)
+all_df <- data.frame(conditions, x, y)
+head(all_df)
+ggplot(all_df, aes(x=x,y=y))+
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)+
+  facet_wrap(~conditions)+
+  theme_classic()
+```
+
+You can see that the slope of the blue line is not always flat (slope zero). Sometimes there is a correlation when we know there shouldn't be. You can keep re-doing this graph by re-building (re-knitting) your R Markdown document. You simulate the outcomes as often as you press the "Build" button.
+
+#### Example  
+
+Create a new data set with 6 conditions, each with 10 pairs of *x* and *y* from the uniform distributions with a min value of 5 and a max value of 10, then plot the scatter plot.
+
+`Enter your code below:`
+
+
+
+
+## World Happiness Report
+
+Let's look again at some correlations in real data. 
+
+### Load the data
+
+We load the data into a data frame. Reminder, the following assumes that you have downloaded the 
+
+```{r, warning=F, message=F}
+library(data.table)
+whr18_data <- fread('WHR2018.csv')
+```
+
+
+### Look at the data
+
+```{r, warning=F, message=F}
+dim(whr18_data)
+colnames(whr18_data)
+head(whr18_data)
+```
+
+
+### Question 1
+
+
+We answer the same question as in the previous lab:
+For the year 2017 only, does a country's measure for "freedom to make life choices" correlate with the country's measure for "Confidence in national government"?
+
+This time we make the scatter plot to answer the question.
+
+
+
+```{r, warning=F, message=F}
+# remove the NAs values
+library(dplyr)
+smaller_df <- whr18_data %>%
+               select(country, year,
+                      `Freedom to make life choices`,
+                      `Confidence in national government`) %>%
+               filter(!is.na(`Freedom to make life choices`),
+                      !is.na(`Confidence in national government`))
+
+smaller_df <- smaller_df %>% filter(year=='2017')
+smaller_df
+```
+
+```{r}
+# we make the plot
+ggplot(smaller_df, aes(x=`Freedom to make life choices`,
+                     y=`Confidence in national government`))+
+  geom_point()+
+  theme_classic()
+```
+
+Although the scatter plot shows the dots are everywhere, it generally indicates that as `Freedom to make life choices` increases in a country, that country's confidence in its national government also increases. This is a positive correlation.
+
+
+
+### Best-fit Line and adjust the size of the points
+
+Let's do this again and add the best-fit line so the trend is more apparent; we use `geom_smooth(method=lm, se=FALSE)`. I also changed the `alpha` value of the dots, so they blend in a bit, and you can see more of them.
+
+```{r}
+
+# plot the data with the best-fit line
+ggplot(smaller_df, aes(x=`Freedom to make life choices`,
+                     y=`Confidence in national government`))+
+  geom_point(alpha=.5)+
+  geom_smooth(method=lm, se=FALSE)+
+  theme_classic()
+```
+
+### Question 2
+
+What is the relationship between positive affect in a country and negative affect in a country?
+
+
+I wouldn't be surprised if there were a negative correlation here: when positive feelings generally go up, shouldn't negative feelings generally go down?
+
+To answer this question, we copy and paste the last code block and change the variables to `Positive affect` and `Negative affect.`
+
+```{r}
+# select DVs and filter for NAs
+smaller_df <- whr18_data %>%
+               select(country,
+                      `Positive affect`,
+                      `Negative affect`) %>%
+               filter(!is.na(`Positive affect`),
+                      !is.na(`Negative affect`))
+# plot the data with the best-fit line
+ggplot(smaller_df, aes(x=`Positive affect`,
+                     y=`Negative affect`))+
+  geom_point(alpha=.5)+
+  geom_smooth(method=lm, se=FALSE)+
+  theme_classic()
+```
+
+As the positive effect goes up, the negative effect goes down. Thus, the negative correlation.
+
+#### Example  
+
+Using the WHR2022.csv file, plot the scatter plot with the best-fit line between “Happiness_score” and “Explained_by_GDP_per_capita.”
+
+`Enter your code below:`
+
+
+## References
+
+The material used in this document contains  excerpts and modifications from:
+
+* Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
+
+
+
