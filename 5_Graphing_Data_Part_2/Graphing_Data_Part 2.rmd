@@ -1,0 +1,265 @@
+---
+title: "Lab 5 Graphing Data (Part 2)"
+author: "B. Sosnovski"
+date: "10/18/2021"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Lab 5 Graphing Data (Part 2)
+
+
+This is a continuation of the practice of the skills presented in Lab 4, Graphing Data.
+
+## General goals
+
+Our general goals for this lab are to do the following:
+
+1. Load some data into R
+2. Make graphs of the quantitative data.
+
+
+## R 
+
+### Gapminder data
+
+[https://www.gapminder.org](https://www.gapminder.org) is an organization that collects some interesting worldwide data. They also make cool visualization tools for looking at the data. There are many good examples, and they have visualization tools built right into their website that you can play around with [https://www.gapminder.org/tools/](https://www.gapminder.org/tools/). That's fun; check it out.
+
+
+### Load the data to R
+
+The data set needed for this lab is included together with these instructions.
+
+Use the following commands to load the data.
+
+```{r, eval=T}
+library("gapminder")
+gapminder_df<-gapminder
+```
+
+If you haven't installed `gapminder` in your project, run the code below.
+
+```{r, eval=F}
+library(data.table)
+gapminder_df <-fread("gapminder.csv")
+
+```
+
+### Look at the data frame from gapminder
+
+You can look at the data to see what is in it.
+
+```{r}
+colnames(gapminder_df)
+```
+
+Let's check how big is this data frame.
+
+```{r}
+data_size <- dim(gapminder_df)
+data_size
+
+```
+
+There are `r data_size[1]` rows of data and `r data_size[2]` variables. We see columns for the country, continent, year, life expectancy, population, and GDP per capita.
+
+
+#### Example
+
+Enter a code chunk below that displays the data's first and last rows in gapminder.
+
+`Enter your code below:`
+
+```{r}
+head(gapminder_df)
+tail(gapminder_df)
+```
+
+
+
+### Asking Questions with the gapminder data
+
+We will show you how to graph some of the data to answer a few different kinds of questions. Then you will form your questions and see if you can answer them with ggplot2 yourself. You will need to copy and paste the following examples and change them up a little bit.
+
+
+### Life expectancy histogram
+
+**How long are people living all around the world according to this data set?**
+
+There are many ways we could plot the data to find out. The first way is a histogram. We have many numbers for life expectancy in the column `lifeExp`. This is a big sample, full of numbers for 142 countries across many years. 
+
+It's easy to make a histogram in ggplot to view the distribution. Most of the code should be familiar to you since you already encountered most of it in lab 3.
+
+```{r}
+library(ggplot2)
+ggplot(gapminder_df, aes(x = lifeExp))+
+  geom_histogram(color="white")
+```
+
+See, that was easy. Next is a code chunk that adds more layers and settings if you want to modify parts of the graph:
+
+```{r}
+ggplot(gapminder_df, aes(x=lifeExp)) +
+  geom_histogram(color="blue")+ 
+  theme_classic(base_size = 15) + 
+  xlab("Life Expectancy") +
+  ylab("Frequency Count") +
+  ggtitle("Histogram of Life Expectancy from Gapminder")
+```
+
+Did you notice the changes from the examples presented in lab 3?
+
+The histogram shows a wide range of life expectancies, from below 40 to just over 80. Histograms are helpful; they show you what values happen more often than others.
+
+One final thing about histograms in ggplot is that you may want to change the bin size. That controls how wide or narrow, or the number of bars (how they split across the range) in the histogram. You must set the `bins=` option in `geom_histogram()`.
+
+```{r}
+ggplot(gapminder_df, aes(x = lifeExp)) +
+  geom_histogram(color="green", bins=50)+ 
+  theme_classic(base_size = 15) + 
+  xlab("Life Expectancy") +
+  ylab("Frequency Count") +
+  ggtitle("Histogram of Life Expectancy from Gapminder (w/ 50 Bins)")
+```
+
+#### Example
+
+Use the code chunk above to create a histogram with different colors and 40 bins displaying the variable corresponding to the GDP per Capita variable in `gapminder`.
+
+
+`Enter your code below:`
+```{r}
+ggplot(gapminder_df, aes(x = gdpPercap)) +
+  geom_histogram(color="yellow", bins=40)+ 
+  theme_classic(base_size = 15) + 
+  xlab("GDP per Capita") +
+  ylab("Frequency Count") +
+  ggtitle("Histogram of GDP per Capita from Gapminder (w/ 40 Bins)")
+```
+
+
+
+**Note:** See, same basic shape, but now breaking up the range into 40 little equal-sized bins, rather than 30, which is the default. You get to choose what you want to do.
+
+### Life expectancy by year scatterplot
+
+We can see that we have data for life expectancy and different years. So, does worldwide life expectancy change across the years in the data set? As we go into the future, are people living longer?
+
+Let's look at this by using a scatter plot. We can set the x-axis as the years and the y-axis as life expectancy. Then we can use `geom_point()` to display a whole bunch of dots and look at them. Here's the simple code:
+
+```{r}
+ggplot(gapminder_df, aes( x= year, y= lifeExp))+
+  geom_point(color="magenta")
+```
+
+Whoa, that's a lot of dots! Remember that each country is measured each year. So, the bands of dots you see show the life expectancies for the whole range of countries within each year of the database. There is a big spread inside each year. But it looks like groups of dots slowly go up over the years.
+
+### One country's life expectancy by year
+
+I'm (B. Sosnovski), born and raised in Brazil, so maybe I want to know if life expectancy for Brazilians has been going up over the years. To find out the answer for one country, we first need to split the complete data set into another smaller one that only contains Brazil data. In other words, we want only the rows where the word "Brazil" is found in the `country` column. We will use the `filter` function from `dplyr` for this:
+
+```{r}
+# filter rows to contain Brazil
+library(dplyr)
+smaller_df <- gapminder_df %>% 
+                 filter(country == "Brazil")
+head(smaller_df)
+
+
+# plot the new data contained in smaller_df
+ggplot(smaller_df, aes( x= year, y= lifeExp))+
+  geom_point(color="black")
+```
+
+I would say things are looking good for Brazilians 🙏; their life expectancy has increased over the years!
+
+#### Example
+
+Enter a code chunk below that shows the life expectance for another country of your choice. Also, add a title and adjust labels for horizontal and vertical axes.
+
+* Here is a list of the countries in the data frame:
+
+```{r}
+listOfCountries <- unique(gapminder_df[,1])
+listOfCountries$country
+```
+
+`Enter your code below:`
+
+
+
+
+### Multiple countries scatterplot
+
+**What if we want to look at a few countries altogether?**
+
+We can do this too. We change how we filter the data so that more than one country is allowed, then plot the data. We will also add some nicer color options and make the plot look pretty. 
+
+First, the simple code that shows the data for the countries Canada, France, and Spain:
+
+```{r}
+# filter rows to contain countries of choice
+smaller_df <- gapminder_df %>% 
+               filter(country %in% c("Canada","France","Spain") == TRUE)
+
+# plot the new data contained in smaller_df
+ggplot(smaller_df, aes(x= year, y= lifeExp, group= country))+
+  geom_point(color="red")
+```
+
+Nice, we can now see three sets of dots, but which countries do they represent? Let's add a legend and make the graph better looking.
+
+```{r}
+ggplot(smaller_df,aes( x= year, y= lifeExp,
+                      group= country, color = country)) +
+  geom_point()+ 
+  theme_classic(base_size = 15) +
+  xlab("Year") +
+  ylab("Life Expectancy") + 
+  ggtitle("Life Expectancy by Year for Three Countries")
+```
+
+### geom_line() connecting the dots
+
+**We might also want to connect the dots with a line!**
+
+To make it easier to see the connection! Remember, ggplot2 draws layers on top of layers. So, we add a new `geom_line()` layer.
+
+```{r}
+ggplot(smaller_df,aes( x= year, y= lifeExp,
+                      group= country, color = country)) +
+  geom_point()+ 
+  geom_line()+
+  theme_classic(base_size = 15) +
+  ylab("Life Expectancy") + 
+  xlab("Year") +
+  ggtitle("Life Expectancy by Year for Three Countries")
+```
+
+#### Example
+
+Utilizing the list of countries above, create a plot with lines connecting the points to display the life expectancy for 2 countries of your choice that haven't been featured in the lab so far. 
+
+
+`Enter your code below:`
+
+
+
+
+
+
+
+## References
+
+The material used in this document contains  excerpts and modifications from:
+
+* Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual". Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
+
+
+

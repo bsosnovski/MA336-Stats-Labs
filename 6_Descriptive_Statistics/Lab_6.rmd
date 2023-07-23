@@ -1,0 +1,36 @@
+---
+title: 'Lab 6 - Descriptive Statistics'
+author: "Student Name"
+date: "01/01/2000"
+output: 
+  html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+
+Use this template rmd file to submit your answers for the Lab assignment. Update the YAML above to have your name and current date.
+
+
+# Lab Exercise (30 points)
+
+Use the code from the lab instructions to attempt to solve the extra things asked for in this assignment. Your exercises are as follows:
+
+1. What is the mean, standard deviation, minimum and maximum life expectancy for all the gapminder data (across all the years and countries)? 
+
+*Hint:* do not use `group_by`
+
+`Enter your code below:`
+
+
+
+2. What is the mean, standard deviation, minimum and maximum life expectancy for all continents in 2007, the most recent year in the dataset? 
+
+*Hint:* add another pipe using filter(year==2007) %>%
+
+
+`Enter your code below:`
+

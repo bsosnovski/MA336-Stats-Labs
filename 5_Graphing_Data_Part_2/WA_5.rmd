@@ -1,0 +1,53 @@
+---
+title: 'WA 5 - Graphing Data (histograms)'
+author: "Student Name"
+date: "01/01/2000"
+output: 
+  html_document
+ 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+
+# Writing assignment (30 points)
+
+
+Complete the writing assignment described in your R Markdown document for this lab. Answer the following questions about histograms. Be sure to use complete and understandable answers. After all, this is a writing assignment. 
+
+Below you will describe what histograms are, how to interpret them, and what they are useful for.
+
+The answers to these questions are worth 10 points each, for a total of 30 points.
+
+a. What do the bars on a histogram represent, and what do the heights of the bars tell you? What is on the x-axis and y-axis of a histogram?
+
+`Enter your answer below:`
+
+
+
+
+b. What does the tallest bar on a histogram tell you?
+
+`Enter your answer below:`
+
+
+
+c. Imagine you had two histograms, one was very wide and spread out, and the other was very narrow with a very tall peak. Which histogram would you expect to contain more consistent numbers (numbers that are close to each other)? Explain why.
+
+`Enter your answer below:`
+
+
+
+
+**Rubric**
+
+General grading. 
+
+- You will receive 0 points for missing answers (say, if you do not answer question c, then you will receive 0 out of 10 points for that question)
+- You must write in complete sentences. Point-form sentences will be given 0 points.
+- Completely incorrect answers will receive 0 points. For example, if you incorrectly describe what the x and y-axes refer to, you will receive 0 points for that question.
+- If your answer is generally correct but very difficult to understand and unclear, you may receive half points for the question
+
+

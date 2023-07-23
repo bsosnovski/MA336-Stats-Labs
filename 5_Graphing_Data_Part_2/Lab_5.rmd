@@ -1,0 +1,52 @@
+---
+title: 'Lab 5 - Graphing Data (Part 2)'
+author: "Student Name"
+date: "01/01/2000"
+output: 
+  html_document 
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+``` 
+
+Use this template rmd file to submit your answers for the Lab assignment. Please update the YAML above to have your name and current date.
+
+# Lab Exercise (60 points)
+
+Use the code from the lab to attempt to solve the extra things that are asked to you do for this assignment. 
+
+These exercises are worth 15 points each, for a total of 60 points.
+
+
+1. Make a graph plotting life expectancy by year for the two continents, using the `continent` factor. Choose any two of the following: Asia, Europe, Africa, Americas, or Oceania. Make sure you change the title so it reads correctly.
+
+`Enter your code below:`
+
+
+
+
+
+2. Make a graph plotting GDP per capita by year for the United States, Canada, and France. Use the `gdpPercap` column for the GDP per capita data.
+
+`Enter your code below:`
+
+
+
+
+3. Make a new graph plotting anything you are interested in using the gapminder data set for life expectancy. It just needs to be a plot that was  not given an example for.
+
+`Enter your code below:`
+
+
+
+
+4. Create a histogram for life expectancy for the continent Europe. Describe what type of distribution is presented.
+
+`Enter your code below:`
+
+
+
+
+

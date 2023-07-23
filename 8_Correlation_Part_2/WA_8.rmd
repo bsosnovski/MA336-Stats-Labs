@@ -1,0 +1,51 @@
+---
+title: 'WA 8 - Correlation (Part 2)'
+author: "Student Name"
+date: "01/01/2001"
+output: 
+  html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+
+# Writing Assignment (20 points)
+
+The following following items are related to the results obtained in the lab assignment.
+
+1. Based on the results of the item 1 in the lab exercised, what are your conclusions about the relationship between “perceptions of corruption” and “negative affect” in 2018? Is this surprising to you?
+
+`Enter your answer below:`
+
+
+
+
+2. Based on the results of the item 2 in the lab exercised, what are your conclusions about the relationship between "Explained by GDP per capita" with "Rank" in happiness? Is this surprising to you?
+
+`Enter your answer below:`
+
+
+
+
+
+## WA Grading
+
+* Content
+
+Students must be thoughtful and reflective and provide an excellent understanding of the concepts in question. Students must give the answers with relevant details. 
+
+* Conventions of language and mechanics
+   + No errors in grammar or spelling; uses complete sentences and clear speech. You are expected to use a spell checker.
+   + Submissions must be made by the due dates.
+
+* For submission, write your answers in this document by the due date—no need to send anything by email or print this.
+
+* Always be sure the final submission is good by checking the rendering of this document on the right side of the screen.
+
+
+**Feel free to allow the Campus Writing Center, L-118, to guide you.**
+
+**Take a copy of the assignment with you when visiting the Writing Center.**

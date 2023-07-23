@@ -1,0 +1,56 @@
+---
+title: 'WA 4 - Graphing Data (Part 1)'
+author: "Student Name"
+date: "01/01/2001"
+output: 
+  html_document
+
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Use this template rmd file to submit your answers for the WA assignment. Update the YAML above to have your name and current date.
+
+
+# Writing Assignment (30 points)
+
+Based on the results obtained in Lab 4, answer the following:
+
+1. Briefly describe what information we may find about NYC's Community Gardens in the data set. For example, how big is the data set, and give examples of some of the variables included and what they represent. (10 points)
+
+`Enter your answer below:`
+
+
+
+2. According to your graph, in which borough most of the community gardens are located? (10 points)
+
+`Enter your answer below:`
+
+
+
+3. Consider the borough you found that contains the most community gardens. What is the neighborhood in that borough with most of the gardens in it? (10 points)
+
+`Enter your answer below:`
+
+
+## WA Grading
+
+* Content
+
+Students must be thoughtful and reflective and provide an excellent understanding of the concepts in question. Students must give the answers with relevant details. 
+
+* Conventions of language and mechanics
+   + No errors in grammar or spelling; uses complete sentences and clear speech. You are expected to use a spellchecker.
+   + Submissions must be made by the due dates.
+
+* For submission, write your answers in this document by the due date—no need to send anything by email or print this.
+
+* Always be sure the final submission is good by checking the rendering of this document on the right side of the screen.
+
+
+**Feel free to allow the Campus Writing Center, L-118, to guide you.**
+
+**Take a copy of the assignment with you when visiting the Writing Center.**
+

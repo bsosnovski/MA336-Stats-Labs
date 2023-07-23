@@ -1,0 +1,50 @@
+---
+title: 'Lab 4 - Graphing Data (Part 1)'
+author: "Student Name"
+date: "01/01/2001"
+output: 
+  html_document
+
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Use this template rmd file to submit your answers for the Lab assignment. Update the YAML above to have your name and current date.
+
+
+# Lab Exercise (50 points)
+
+Use the code from the lab instructions to attempt to solve the extra things asked for in this assignment. Your exercises are as follows:
+
+1. Load the data set called NYC_Greenthumb_Community_Gardens.csv that is in this lab's directory.(10 points)
+
+`Enter your code below:`
+
+
+
+For the rest of this exercise, be sure to rename any variable, if needed, to identify the contents of the data correctly.
+
+2. Use some R functions to examine the data set about NYC's Community Gardens to determine its variables. (10 points)
+
+`Enter your code below:`
+
+
+
+
+3. Make a graph plotting the number of community gardens per borough.  (15 points)
+
+`Enter your code below:`
+
+
+
+
+4. Now that you know which borough has the most community gardens in NYC (from #3 above), make a graph plotting the number of community gardens per neighborhood in that specific borough. (15 points)
+
+  **Hint:** You will need to group your data by the variable whose values are the neighborhoods and filter the data by the variable with the specific value equal to the borough with most of the community gardens.
+
+`Enter your code below:`
+
+
+

@@ -1,0 +1,36 @@
+---
+title: 'Lab 8 - Correlation (Part 2)'
+author: "Student Name"
+date: "01/01/2001"
+output: 
+  html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+Complete your work in this document before the deadline. Remember to update the YAML above.
+
+# Lab Exercise (30 points)
+
+Use the code from the lab instructions to complete this lab exercise.
+
+
+1. Using the WHR2018.csv file, plot the scatter plot with the best-fit line between “perceptions of corruption” and “negative affect” for 2005 ONLY.
+
+`Enter your code below:`
+
+
+
+2. Using the WHR2022.csv file, provide the scatter plot with the best-fit line of "Explained by GDP per capita" with "Rank."
+
+`Enter your code below:`
+
+
+
+
+
+___
+
