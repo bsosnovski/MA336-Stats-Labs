@@ -11,12 +11,5 @@ Video tutorials about the contents in these labs are available here:
 The labs in html form can be found here:
 [https://rpubs.com/bsosnovski](https://rpubs.com/bsosnovski)
 
-
-The material used in these documents contains excerpts and modifications from 
-the lab manual, which is part of the "Answering Questions with Data" bundle.
-
-* Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga (2018) "Answering questions with data: Lab Manual." 
-Last compiled on 2019-04-06. [https://www.crumplab.com/statisticsLab/](https://www.crumplab.com/statisticsLab/)
-
 License: CC BY-SA 4.0
 
